@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('tareasProyecto', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            // $table->text('descripcion')->nullable();
-            // $table->int('estado'); 
-            // $table->int('idUsuario');
-            // $table->int('idProyecto');
+            $table->string('descripcion')->nullable();
+            $table->integer('estado'); 
+            $table->integer('idUsuario');
+            $table->integer('idProyecto');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('tareasProyecto');
     }
 };

@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('proyectos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            // $table->int('idCliente');
-            // $table->int('estado');
-            // $table->datetimes('fechaInicio');
-            // $table->datetimes('fechaFin');
-            // $table->text('descripcion')->nullable();
+            $table->integer('idCliente');
+            $table->integer('estado');
+            $table->timestamp('fechaInicio');
+            $table->timestamp('fechaFin');
+            $table->text('descripcion')->nullable();
             $table->timestamps();
         });
     }

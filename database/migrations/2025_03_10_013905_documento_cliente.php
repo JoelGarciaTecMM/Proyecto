@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('documentoCliente', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            // $table->string('ruta');
-            // $table->int('idCliente'); 
+            $table->string('ruta');
+            $table->integer('idCliente'); 
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('documentoCliente');
     }
 };
