@@ -21,4 +21,4 @@ use App\Http\Controllers\dashboardController;
 
 Route::get('/', signInController::class);
 
-Route::get('/dashboard', dashboardController::class);
+Route::get('/dashboard', dashboardController::class) -> name('dashboard');

@@ -29,14 +29,14 @@
     <body class="bg-gray-200">
 
     <main class="main-content  mt-0">
-        <div class="page-header align-items-start min-vh-100" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_9Kj90bj0TvGpMXEv4MkTVWdjGTgmJ0zi7Q&s');">
+        <div class="page-header align-items-start min-vh-100" style="background-image: url('https://img.freepik.com/vector-gratis/telon-fondo-abstracto-estilo-poli-presentacion-moderna_1017-53594.jpg');">
         <span class="mask bg-gradient-dark opacity-6"></span>
         <div class="container my-auto">
             <div class="row">
             <div class="col-lg-4 col-md-8 col-12 mx-auto">
                 <div class="card z-index-0 fadeIn3 fadeInBottom">
                 <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                    <div class="bg-gradient-info shadow-primary border-radius-lg py-3 pe-1">
+                    <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
                     <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Inicio de sesión</h4>
                     <div class="row mt-3">
                         <div class="col-2 text-center ms-auto">
@@ -74,11 +74,11 @@
                     </div> -->
 
                     <div class="text-center">
-                        <a type="button" href = "./dashboard" class="btn bg-gradient-info w-100 my-4 mb-2">Iniciar sesión</a>
+                        <a type="button" href = "{{route('dashboard')}}" class="btn bg-gradient-primary w-100 my-4 mb-2">Iniciar sesión</a>
                     </div>
                     <p class="mt-4 text-sm text-center">
                         ¿No recuerdas tu contraseña?
-                        <a href="../../../pages/authentication/signup/illustration.html" class="text-info text-gradient font-weight-bold">click aquí</a>
+                        <a href="../../../pages/authentication/signup/illustration.html" class="text-primary text-gradient font-weight-bold">click aquí</a>
                     </p>
                     </form>
                 </div>

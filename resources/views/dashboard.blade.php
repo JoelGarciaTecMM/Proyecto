@@ -1,9 +1,7 @@
-@extends('layouts.plantilla')
+@extends('layout.plantilla')
 
-@section('tittle', 'dashboard')
+@section('titulo', 'dashboard')
 
-@section('contenido')
-
-    <h1>aasdad</h1>
-    
+@section('content')
+    <p>This is my body content.</p>
 @endsection
