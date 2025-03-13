@@ -28,12 +28,14 @@
 
         <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 bg-gradient-dark" id="sidenav-main">
             <div class="sidenav-header">
-                <a class="navbar-brand m-0" href="#" enabled>
+                <div class="navbar-brand m-0" >
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_9Kj90bj0TvGpMXEv4MkTVWdjGTgmJ0zi7Q&s" class="navbar-brand-img h-100" alt="main_logo">
-                </a>
-            </div>
+                    <span class="ms-1 font-weight-bold text-white">Fundacion Juan Pablo II</span>
+                    <br>
+                    <span class="ms-1 font-weight-bold text-white ms-5">la vida por ti</span>
+                </div>            </div>
             <hr class="horizontal light mt-0 mb-2">
-            <div class="collapse navbar-collapse  w-auto h-auto" id="sidenav-collapse-main">
+            <div class="collapse navbar-collapse w-auto h-auto" id="sidenav-collapse-main">
                 <ul class="navbar-nav">
                     <!--
                 <li class="nav-item mb-2 mt-0">
@@ -66,28 +68,30 @@
                 </li>-->
 
                 <li class="nav-item">
-                    <div class="collapse  show " id="pagesExamples">
+                    <div class="collapse show" id="pagesExamples">
                     <ul class="nav ">
+
                         <li class="nav-item ">
-                        <a class="nav-link text-white " href="../../../pages/pages/pricing-page.html">
-                            <span class="sidenav-mini-icon"> D </span>
-                            <span class="sidenav-normal  ms-2  ps-1"> Dashboard </span>
-                        </a>
+                            <a class="nav-link text-white " href="{{route('dashboard')}}">
+                                <span class="sidenav-mini-icon"> D </span>
+                                <span class="sidenav-normal  ms-2  ps-1"> Dashboard </span>
+                            </a>
                         </li>
 
                         <li class="nav-item ">
-                            <a class="nav-link text-white " href="../../../pages/pages/pricing-page.html">
+                            <a class="nav-link text-white " href="{{route('dashboard')}}">
                                 <span class="sidenav-mini-icon"> U </span>
                                 <span class="sidenav-normal  ms-2  ps-1"> Usuarios </span>
                             </a>
                         </li>
 
                         <li class="nav-item ">
-                            <a class="nav-link text-white " href="../../../pages/pages/pricing-page.html">
+                            <a class="nav-link text-white " href="{{route('dashboard')}}">
                                 <span class="sidenav-mini-icon"> C </span>
                                 <span class="sidenav-normal  ms-2  ps-1"> Clientes </span>
                             </a>
                         </li>
+
                         <!--
                         <li class="nav-item ">
                         <a class="nav-link text-white " href="../../../pages/pages/rtl-page.html">
@@ -130,17 +134,43 @@
         {{-- end of sidebarr --}}
 
         <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-        
-        
-        {{-- content --}}
-        <div>
-            @yield('content')
-        </div>
-        {{--end of content --}}
-
+            <div class = "mt-4">
+            {{-- content --}}
+                <div>
+                    @yield('content')
+                </div>
+            {{--end of content --}}
+            </div>
+        </main>
 
         {{-- footer --}}
-        
+        <footer class="footer position-absolute bottom-2 py-2 w-100">
+            <div class="container">
+            <div class="row align-items-center justify-content-lg-between">
+                <div class="col-12 col-md-6 my-auto">
+                <div class="copyright text-center text-sm text-black text-lg-start">
+                    Fundacion Juan Pablo II la vida por ti
+                </div>
+                </div>
+                <div class="col-12 col-md-6">
+                <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                    <li class="nav-item">
+                    <a href="https://www.facebook.com/FundacionJuanPabloIILaVidaPorTI/?locale=gl_ES" class="nav-link text-black" target="_blank">Facebook</a>
+                    </li>
+                    <li class="nav-item">
+                    <a href="https://www.creative-tim.com/presentation" class="nav-link text-black" target="_blank">Instagram</a>
+                    </li>
+                    <li class="nav-item">
+                    <a href="https://www.creative-tim.com/blog" class="nav-link text-black" target="_blank">x (twitter)</a>
+                    </li>
+                    <li class="nav-item">
+                    <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-black" target="_blank">Acerca de nosotros</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            </div>
+        </footer>
         {{-- end of footer --}}
         
     </body>
