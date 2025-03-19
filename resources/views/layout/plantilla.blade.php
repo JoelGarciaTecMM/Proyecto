@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_9Kj90bj0TvGpMXEv4MkTVWdjGTgmJ0zi7Q&s">
         <title> @yield('titulo')</title>
 
         <!--     Fonts and icons     -->
@@ -70,6 +71,13 @@
                 <li class="nav-item">
                     <div class="collapse show" id="pagesExamples">
                     <ul class="nav ">
+
+                        
+                        <li class="nav-item ">
+                            <a class="nav-link text-white " href="{{route('logout')}}">
+                                <i class="material-icons opacity-10">logout</i>
+                            </a>
+                        </li>
 
                         <li class="nav-item ">
                             <a class="nav-link text-white " href="{{route('dashboard')}}">
@@ -144,7 +152,7 @@
         </main>
 
         {{-- footer --}}
-        <footer class="footer position-absolute bottom-2 py-2 w-100">
+        {{-- <footer class="footer position-absolute bottom-2 py-2 w-100">
             <div class="container">
             <div class="row align-items-center justify-content-lg-between">
                 <div class="col-12 col-md-6 my-auto">
@@ -170,7 +178,7 @@
                 </div>
             </div>
             </div>
-        </footer>
+        </footer> --}}
         {{-- end of footer --}}
         
     </body>

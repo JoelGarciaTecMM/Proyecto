@@ -19,6 +19,14 @@ use App\Http\Controllers\dashboardController;
 //     return view('welcome');
 // });
 
-Route::get('/', signInController::class);
+//raiz
+Route::get('/',[signInController::class,'loginView']) -> name ("signIn");
 
-Route::get('/dashboard', dashboardController::class) -> name('dashboard');
+
+//control de sesiones
+Route::post('/validar_sesion',[signInController::class,'login']) -> name('login');
+Route::get('/cerrar_sesion',[signInController::class,'logout']) -> name('logout');
+
+
+//dashboard
+Route::get('/dashboard', dashboardController::class)-> name('dashboard');
