@@ -19,28 +19,34 @@ class Usuario extends Authenticatable
      *
      * @var array<int, string>
      */
+    /*
     protected $fillable = [
         'nombre',
         'correo',
         'contraseña',
     ];
+    */
 
     /**
      * The attributes that should be hidden for serialization.
      *
      * @var array<int, string>
      */
+    /*
     protected $hidden = [
         'contraseña',
         'remember_token',
     ];
+    */
 
     /**
      * The attributes that should be cast.
      *
      * @var array<string, string>
      */
+    /*
     protected $casts = [
         'contraseña' => 'hashed',
     ];
+    */
 }
