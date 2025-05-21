@@ -17,9 +17,6 @@
                         <div class = "mb-3 me-3">
                             <select name="cliente" id="epCliente" class = "form-control">
                                 <option selected >Seleciones una opciones</option>
-                                <option value="1">prueba 1</option>
-                                <option value="2">prueba 2</option>
-                                <option value="3">prueba 3</option>
                             </select>
                         </div>
                     </div>
@@ -39,6 +36,14 @@
                         <div class = "mb-2"><span>Decripcion:</span></div>
                         <div class = "mb3">
                         <textarea class = "form-control " name="descripcion" id="epDecripcion" placeholder="Escribe aqui..."></textarea>
+                        </div>
+                    </div>
+                    <div class = "row" >
+                        <div class = "mb-2"><span>Estado:</span></div>
+                        <div class = "mb-3 me-3">
+                            <select name="estado" id="epEstado" class = "form-control">
+                                <option selected >Seleciones una opciones</option>
+                            </select>
                         </div>
                     </div>
                     <input type="hidden" id = "epId" nombre = "idProyecto" class = "form-control">

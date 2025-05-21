@@ -1,9 +1,31 @@
 var arrDatos = "";
 const modalNuevo = new bootstrap.Modal ("#agregarCliente");
 const modalEditar = new bootstrap.Modal ("#editarCliente");
+    let dataTableIsInicialized = false;
+    let dataTable;
+
+    const dataTableOptions ={
+        destroy: true,
+        language: {
+            lengthMenu: "Mostrar _MENU_ registros por página",
+            zeroRecords: "Ningún usuario encontrado",
+            info: "Mostrando de _START_ a _END_ de un total de _TOTAL_ registros",
+            infoEmpty: "Ningún usuario encontrado",
+            infoFiltered: "(filtrados desde _MAX_ registros totales)",
+            search: "Buscar:",
+            loadingRecords: "Cargando...",
+            paginate: {
+                first: "Primero",
+                last: "Último",
+                next: "Siguiente",
+                previous: "Anterior"
+            },
+        }
+    };
 
 //funcion para mostrar los proyectos
 function showClientes(){
+    if (dataTableIsInicialized == true) dataTable.destroy();
     $.ajax ({
     type: "GET",
     url: ruta_get_clientes,
@@ -25,13 +47,15 @@ function showClientes(){
                 "<td>"+arrDatos[i].curp+"</td>"+
                 '<td class = "text-sm">'+
                     '<a type = "button" name = "'+i+'" onclick = "showEditarCliente(this)" ><i class="material-icons text-secondary opacity-10">edit</i></a>'+
-                    '<a type = "button" href = "./info_cliente" ><i class="material-icons text-secondary opacity-10">person</i></a>'+
+                    '<a type = "button" href = "./info_cliente?id='+arrDatos[i].id+'"><i class="material-icons text-secondary opacity-10">person</i></a>'+
                     '<a type = "button" name = "'+i+'" onclick = "eliminarCliente(this)" ><i class="material-icons text-secondary opacity-10">delete</i></a>'+
                 '</td>'+
                 "</tr>"
 
                 $("#tbodyTableClientes").append(content);
             }
+            dataTable = $('#dataTable-clientes').DataTable(dataTableOptions);
+            dataTableIsInicialized = true;
         }
     });
 }
@@ -60,6 +84,8 @@ $("#formNuevoCliente").on("submit",function(event){
         console.log (datos);
         showClientes();
         modalNuevo.hide();
+        if (datos == 1)alertsuccess ("Completado", "Cliente creado con exito");
+        else alertdanger ("Error","Error desconocido intente de nuevo");
         //document.getElementById("formNuevoCliente").reset();
         }
     });
@@ -100,6 +126,8 @@ $("#formEditarCliente").on("submit",function(event){
         //console.log(datos);
         showClientes();
         modalEditar.hide();
+        if (datos == 1)alertsuccess ("Completado", "Cliente actualizado con exito");
+        else alertdanger ("Error","Error desconocido intente de nuevo");
         }
     });
 })
@@ -135,6 +163,8 @@ function eliminarCliente(item){
             success: function(datos) {
                 console.log (datos);
                 showClientes();
+                if (datos == 1)alertsuccess ("Completado", "Cliente Eliminada con exito");
+                else alertdanger ("Error","Error desconocido intente de nuevo");
             }
         });
     }

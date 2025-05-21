@@ -33,13 +33,13 @@
                 <div class="page" >
                     <div class="page-content">
 
-                        <header id="site_header" class="header mobile-menu-hide">
+                        <header id="site_header" class="header">
                             <div class="header-content">
                                 <div class="header-photo">
                                     <img src="..\resources\documents\images\fotoDePerfil.jpg" alt="Imagen de perfil"><!----imagen de inicio---->
                                 </div>
                                 <div class="header-titles">
-                                    <h2>Joel Adrian Garcia Soto</h2><!---Variable nombre--->
+                                    <h2 id="nombreCliente"></h2><!---Variable nombre--->
                                     <!---<h4>Asesor comercial</h4> Variable puesto--->
                                 </div>
                             </div>
@@ -97,20 +97,20 @@
                                             </div>
                                             <div class="col-sm-12 col-md-12 col-lg-12">
                                                 <div class="title-block">
-                                                    <h3>Correo:</h3>
-                                                    <span></span>
+                                                    <h4>Correo:</h4>
+                                                    <span id="correoCliente"></span>
                                                 </div>
                                             </div>
                                             <div class="col-sm-12 col-md-12 col-lg-12">
                                                 <div class="title-block">
-                                                    <h3>Telefono:</h3>
-                                                    <span></span>
+                                                    <h4>Telefono:</h4>
+                                                    <span id="telefonoCliente"></span>
                                                 </div>
                                             </div>
                                             <div class="col-sm-12 col-md-12 col-lg-12">
                                                 <div class="title-block">
-                                                    <h3>Curp:</h3>
-                                                    <span></span>
+                                                    <h4>Curp:</h4>
+                                                    <span id="curpCliente"></span>
                                                 </div>
                                             </div>
 
@@ -122,21 +122,8 @@
                                                                 <div class="card-header p-3 pb-0">
                                                                     <h6 class="mb-0">proyectos Activos</h6>
                                                                 </div>
-                                                                <div id = "proyectosClienteContenido">
-                                                                    <div class="card-body border-radius-lg p-3" >
-                                                                        <a href="" type= "buttom">
-                                                                            <div class="d-flex">
-                                                                                <div class="icon icon-shape bg-gradient-dark shadow text-center">
-                                                                                    <i class="material-icons opacity-10">assignment</i>
-                                                                                </div>
-                                                                                <div class="ms-3">
-                                                                                    <div class="numbers">
-                                                                                        <h6 class="mb-1 text-dark text-sm">Cyber Week</h6>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </a>
-                                                                    </div>
+                                                                <div id = "proyectosClienteResumen">
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -152,47 +139,8 @@
                                                                 <div class="card-header p-3 pb-0">
                                                                     <h6 class="mb-0">Ultimos documentos</h6>
                                                                 </div>
-                                                                <div class="card-body border-radius-lg p-3">
-                                                                    <a href="" type= "buttom">
-                                                                        <div class="d-flex">
-                                                                            <div class="icon icon-shape bg-gradient-dark shadow text-center">
-                                                                                <i class="material-icons opacity-10">assignment</i>
-                                                                            </div>
-                                                                            <div class="ms-3">
-                                                                                <div class="numbers">
-                                                                                    <h6 class="mb-1 text-dark text-sm">Cyber Week</h6>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </a>
-                                                                </div>
-                                                                <div class="card-body border-radius-lg p-3">
-                                                                    <a href="" type= "buttom">
-                                                                        <div class="d-flex">
-                                                                            <div class="icon icon-shape bg-gradient-dark shadow text-center">
-                                                                                <i class="material-icons opacity-10">assignment</i>
-                                                                            </div>
-                                                                            <div class="ms-3">
-                                                                                <div class="numbers">
-                                                                                    <h6 class="mb-1 text-dark text-sm">Cyber Week</h6>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </a>
-                                                                </div>
-                                                                <div class="card-body border-radius-lg p-3">
-                                                                    <a href="" type= "buttom">
-                                                                        <div class="d-flex">
-                                                                            <div class="icon icon-shape bg-gradient-dark shadow text-center">
-                                                                                <i class="material-icons opacity-10">assignment</i>
-                                                                            </div>
-                                                                            <div class="ms-3">
-                                                                                <div class="numbers">
-                                                                                    <h6 class="mb-1 text-dark text-sm">Cyber Week</h6>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </a>
+                                                                <div id = "documentosClienteResumen">
+                                                                    
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -221,20 +169,7 @@
                                                                     <h6 class="mb-0"></h6>
                                                                 </div>
                                                                 <div id = "proyectosClienteContenido">
-                                                                    <div class="card-body border-radius-lg p-3" >
-                                                                        <a href="" type= "buttom">
-                                                                            <div class="d-flex">
-                                                                                <div class="icon icon-shape bg-gradient-dark shadow text-center">
-                                                                                    <i class="material-icons opacity-10">assignment</i>
-                                                                                </div>
-                                                                                <div class="ms-3">
-                                                                                    <div class="numbers">
-                                                                                        <h6 class="mb-1 text-dark text-sm">Cyber Week</h6>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </a>
-                                                                    </div>
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -248,6 +183,14 @@
                                 <section  class="" id = "pagDocumentos" style = "display: none;">
                                     <div class="section-content radius-section">
                                         <div class="row h-50">
+                                            <div>
+                                                <form id = "uploadUserFile">
+                                                    <input class = "form-control" type="file" name="documento" id="documento">
+                                                    <div class = "mt-2 d-grid gap-2 d-md-flex justify-content-md-end">
+                                                        <button type = "submit" class = "btn btn-success " href="">Agregar archivo</button>
+                                                    </div>
+                                                </form>
+                                            </div>
                                             <div class="col-sm-12 col-md-12 col-lg-12">
                                                 <div class="title-block mb-4">
                                                     <h3>Documentos</h3>
@@ -261,21 +204,8 @@
                                                                 <div class="card-header p-3 pb-0">
                                                                     <h6 class="mb-0"></h6>
                                                                 </div>
-                                                                <div id = "proyectosClienteContenido">
-                                                                    <div class="card-body border-radius-lg p-3" >
-                                                                        <a href="" type= "buttom">
-                                                                            <div class="d-flex">
-                                                                                <div class="icon icon-shape bg-gradient-dark shadow text-center">
-                                                                                    <i class="material-icons opacity-10">assignment</i>
-                                                                                </div>
-                                                                                <div class="ms-3">
-                                                                                    <div class="numbers">
-                                                                                        <h6 class="mb-1 text-dark text-sm">Cyber Week</h6>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </a>
-                                                                    </div>
+                                                                <div id = "documentosClienteContenido">
+        
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -308,13 +238,16 @@
 
     <!--<script src="../resources/js/main.js"></script> -->
 
-    {{-- <script>
-        const ruta_get_tareasProyecto = '{{route('api.tareasProyecto.show')}}';
-        const ruta_post_tareasProyecto = '{{route('api.tareasProyecto.create')}}';
-        const ruta_put_tareasProyecto = '{{route('api.tareasProyecto.update')}}';
-        const ruta_delete_tareasProyecto = '{{route('api.tareasProyecto.delete')}}';
-        const id_proyecto = '{{request()->id}}';
-        console.log (id_proyecto);
-    </script> --}}
+    <script>
+        const ruta_get_infoGeneral = '{{route('api.infoCliente.general')}}';
+        const ruta_get_infoProyectos = '{{route('api.infoCliente.proyectos')}}';
+        const ruta_get_infoProyectosActivos = '{{route('api.infoCliente.proyectosActivos')}}';
+        const ruta_get_infoDocumentos = '{{route('api.infoCliente.archivos')}}';
+        const ruta_upload_document = '{{route('api.infoCliente.uploadFile')}}';
+        const ruta_delete_document = '{{route('api.infoCliente.deleteFile')}}';
+        // const ruta_delete_tareasProyecto = '{{route('api.tareasProyecto.delete')}}';
+        const id_cliente = '{{request()->id}}';
+        console.log (id_cliente);
+    </script>
     <script src="../resources/js/apiFunctions/infoCliente.js"></script> 
 @endsection

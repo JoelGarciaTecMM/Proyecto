@@ -29,9 +29,7 @@
                         <div class = "mb-2"><span>Tipo:</span></div>
                         <div class = "mb-3 me-3">
                             <select name="tipoUsuario" id="euTipoUsuario" class = "form-control" required>
-                                <option selected >Seleciones una opciones</option>
-                                <option value="1">Administrador</option>
-                                <option value="2">Operador</option>
+
                             </select>
                         </div>
                     </div>

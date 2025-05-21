@@ -1,9 +1,31 @@
 var arrDatos = "";
 const modalNuevo = new bootstrap.Modal ("#agregarUsuario");
 const modalEditar = new bootstrap.Modal ("#editarUsuario");
+    let dataTableIsInicialized = false;
+    let dataTable;
+
+    const dataTableOptions ={
+        destroy: true,
+        language: {
+            lengthMenu: "Mostrar _MENU_ registros por página",
+            zeroRecords: "Ningún usuario encontrado",
+            info: "Mostrando de _START_ a _END_ de un total de _TOTAL_ registros",
+            infoEmpty: "Ningún usuario encontrado",
+            infoFiltered: "(filtrados desde _MAX_ registros totales)",
+            search: "Buscar:",
+            loadingRecords: "Cargando...",
+            paginate: {
+                first: "Primero",
+                last: "Último",
+                next: "Siguiente",
+                previous: "Anterior"
+            },
+        }
+    };
 
 //funcion para mostrar los proyectos
 function showUsuarios(){
+    if (dataTableIsInicialized == true) dataTable.destroy();
     $.ajax ({
     type: "GET",
     url: ruta_get_usuarios,
@@ -21,7 +43,7 @@ function showUsuarios(){
                 "<td>"+arrDatos[i].id+"</td>"+
                 "<td>"+arrDatos[i].nombre+ " " +arrDatos[i].apellido+"</td>"+
                 "<td>"+arrDatos[i].correo+"</td>"+
-                "<td>"+arrDatos[i].tipoUsuario+"</td>"+
+                "<td>"+arrDatos[i].nombreRol+"</td>"+
                 '<td class = "text-sm">'+
                     '<a type = "button" name = "'+i+'" onclick = "showEditarUsuario(this)" ><i class="material-icons opacity-10">edit</i></a>'+
                     '<a type = "button" name = "'+i+'" onclick = "eliminarUsuario(this)" ><i class="material-icons opacity-10">delete</i></a>'+
@@ -30,6 +52,10 @@ function showUsuarios(){
 
                 $("#tbodyTableUsuarios").append(content);
             }
+            dataTable = $('#dateTable-usuarios').DataTable(dataTableOptions);
+            dataTableIsInicialized = true;
+
+            fillRol();
         }
     });
 }
@@ -58,6 +84,8 @@ $("#formNuevoUsuario").on("submit",function(event){
         //console.log (datos);
         showUsuarios();
         modalNuevo.hide();
+        if (datos == 1)alertsuccess ("Completado", "Usuario creado con exito");
+        else alertdanger ("Error","Error desconocido intente de nuevo");
         }
     });
 })
@@ -95,6 +123,8 @@ $("#formEditarUsuario").on("submit",function(event){
         //console.log(datos);
         showUsuarios();
         modalEditar.hide();
+        if (datos == 1)alertsuccess ("Completado", "Usuario actualizado con exito");
+        else alertdanger ("Error","Error desconocido intente de nuevo");
         }
     });
 })
@@ -130,9 +160,34 @@ function eliminarUsuario(item){
             success: function(datos) {
                 //console.log (datos);
                 showUsuarios();
+                if (datos == 1)alertsuccess ("Completado", "Usuario Eliminada con exito");
+                else alertdanger ("Error","Error desconocido intente de nuevo");
             }
         });
     }
+    });
+}
+
+function fillRol(){
+        var inn = '<option selected >Seleciones una opciones</option>';
+    $.ajax ({
+    type: "GET",
+    url: ruta_rol_todos,
+    async: false,
+
+        beforeSend: function(objeto) {
+        //$("#datatable-search").html("Mensaje: Cargando...");
+        },
+        success: function(result) {
+            console.log (result);
+            $("#nuTipoUsuario").html("");
+            $("#euTipoUsuario").html("");
+            for (var i = 0; i < result.length; i ++){
+                inn += "<option value='"+result[i].id+"'>"+result[i].nombre+"</option>";
+            }
+            $("#nuTipoUsuario").html(inn);
+            $("#euTipoUsuario").html(inn);
+        }
     });
 }
 

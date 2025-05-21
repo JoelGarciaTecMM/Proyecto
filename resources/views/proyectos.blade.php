@@ -6,9 +6,18 @@
     <div class="container-fluid py-3">
         <div class="row me-1">
             <div class = "card">
-                <div class="me-5 ms-5">
+                <div class="card-header p-3 mt-4">
+                    <div class="icon icon-lg icon-shape bg-gradient-primary shadow text-center border-radius-lg float-start">
+                        <i class="material-icons opacity-10">assignment</i>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <h4 class="">Proyectos</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body me-5 ms-5">
                     <div class="row">
-                        <span class = "mb-2 fs-4 mt-4">Proyectos</span>
                         <div class="container text-center mb-4">
                             <div class="row">
                                 <div class="col">
@@ -26,7 +35,7 @@
                             </div>
                         </div>
                         <div class="table-responsive">
-                            <table class = "table table-flush dataTable-table" id = "myTable">
+                            <table class = "table table-flush dataTable-table" id = "tablaProyectos">
                                 <thead>
                                     <td>Id</td>
                                     <td>Nombre</td>
@@ -90,6 +99,8 @@
         const ruta_post_proyecto = '{{route('api.proyectos.create')}}';
         const ruta_put_proyecto = '{{route('api.proyectos.update')}}';
         const ruta_delete_proyecto = '{{route('api.proyectos.delete')}}'; 
+        const ruta_get_usuariosTodos = '{{route('api.clientes.show')}}';
+        const ruta_get_estadoProyecto = '{{route('api.estadoProyecto.todos')}}';
     </script>
     <script src="../resources/js/apiFunctions/proyectos.js"></script>
 @endsection

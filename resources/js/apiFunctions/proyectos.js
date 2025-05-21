@@ -1,9 +1,32 @@
         var arrDatos = "";
         const modalNuevo = new bootstrap.Modal ("#agregarProyecto");
         const modalEditar = new bootstrap.Modal ("#actualizarProyecto");
+        let dataTableIsInicialized = false;
+        let dataTable;
+
+        const dataTableOptions ={
+            destroy: true,
+            language: {
+                lengthMenu: "Mostrar _MENU_ registros por página",
+                zeroRecords: "Ningún usuario encontrado",
+                info: "Mostrando de _START_ a _END_ de un total de _TOTAL_ registros",
+                infoEmpty: "Ningún usuario encontrado",
+                infoFiltered: "(filtrados desde _MAX_ registros totales)",
+                search: "Buscar:",
+                loadingRecords: "Cargando...",
+                paginate: {
+                    first: "Primero",
+                    last: "Último",
+                    next: "Siguiente",
+                    previous: "Anterior"
+                },
+            }
+        };
+
 
         //funcion para mostrar los proyectos
         function showProyectos(){
+            if (dataTableIsInicialized == true) dataTable.destroy();
             $.ajax ({
             type: "GET",
             url: ruta_get_proyectos,
@@ -19,8 +42,8 @@
                         var content = "<tr>"+ 
                         "<td>"+arrDatos[i].id+"</td>"+
                         "<td>"+arrDatos[i].nombre+"</td>"+
-                        "<td>"+arrDatos[i].idCliente+"</td>"+
-                        "<td>"+arrDatos[i].estado+"</td>"+
+                        "<td>"+arrDatos[i].nombreCliente+"</td>"+
+                        "<td>"+arrDatos[i].nombreEstado+"</td>"+
                         "<td>"+arrDatos[i].fechaInicio+"</td>"+
                         "<td>"+arrDatos[i].fechaFin+"</td>"+
                         "<td>"+arrDatos[i].descripcion+"</td>"+
@@ -33,6 +56,10 @@
 
                         $("#tbodyTableProyectos").append(content);
                     }
+                    dataTable = $('#tablaProyectos').DataTable(dataTableOptions);
+                    dataTableIsInicialized = true;
+                    showUsuarios();
+                    showEstadoProyecto();
                 }
             });
         }
@@ -60,7 +87,10 @@
                 success: function(datos) {
                 console.log (datos);
                 showProyectos();
+                document.getElementById("formNuevoProyecto").reset();
                 modalNuevo.hide();
+                if (datos == 1)alertsuccess ("Completado", "Proyecto agregado con exito");
+                else alertdanger ("Error","Error desconocido intente de nuevo");
                 }
             });
         })
@@ -77,6 +107,7 @@
             //console.log(document.getElementById("epCliente"));
             $("#epFechaFin").val(arrDatos[p].fechaFin);
             $("#epDecripcion").html(arrDatos[p].descripcion);
+            $("#epEstado").val(arrDatos[p].estado);
             modalEditar.show();
         }
 
@@ -97,8 +128,11 @@
                 //$("#datatable-search").html("Mensaje: Cargando...");
                 },
                 success: function(datos) {
+                console.log(datos);
                 showProyectos();
                 modalEditar.hide();
+                if (datos == 1)alertsuccess ("Completado", "Proyecto actualizado con exito");
+                else alertdanger ("Error","Error desconocido intente de nuevo");
                 }
             });
         })
@@ -132,13 +166,65 @@
                     //$("#datatable-search").html("Mensaje: Cargando...");
                     },
                     success: function(datos) {
-                        //console.log (datos);
+                        console.log (datos);
                         showProyectos();
+                        if (datos == 1)alertsuccess ("Completado", "Proyecto eliminado con exito");
+                        else alertdanger ("Error","Error desconocido intente de nuevo");
                     }
                 });
             }
             });
         }
+
+        function showUsuarios(){
+            var inn = '<option selected >Seleciones una opciones</option>';
+            $.ajax ({
+            type: "GET",
+            url: ruta_get_usuariosTodos,
+            async: false,
+
+                beforeSend: function(objeto) {
+                //$("#datatable-search").html("Mensaje: Cargando...");
+                },
+                success: function(result) {
+                    //console.log (result);
+                    $("#npCliente").html("");
+                    $("#epCliente").html("");
+                    for (var i = 0; i < result.length; i ++){
+                        inn += "<option value='"+result[i].id+"'>"+result[i].nombre+"</option>";
+                    }
+                    //console.log(inn);
+                    $("#npCliente").html(inn);
+                    $("#epCliente").html(inn);
+                }
+            });
+        }
+
+        function showEstadoProyecto (){
+            var inn = '<option selected >Seleciones una opciones</option>';
+            $.ajax ({
+            type: "GET",
+            url: ruta_get_estadoProyecto,
+            async: false,
+
+                beforeSend: function(objeto) {
+                //$("#datatable-search").html("Mensaje: Cargando...");
+                },
+                success: function(result) {
+                    //console.log (result);
+                    $("#epEstado").html("");
+                    for (var i = 0; i < result.length; i ++){
+                        inn += "<option value='"+result[i].id+"'>"+result[i].nombre+"</option>";
+                    }
+                    //console.log(inn);
+                    $("#epEstado").html(inn);
+                }
+            });
+        }
+
+
+
+
 
 
 

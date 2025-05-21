@@ -38,23 +38,7 @@
                 <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                     <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
                     <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Inicio de sesión</h4>
-                    <div class="row mt-3">
-                        <div class="col-2 text-center ms-auto">
-                        <a class="btn btn-link px-3" href="javascript:;">
-                            <i class="fa fa-facebook text-white text-lg"></i>
-                        </a>
-                        </div>
-                        <div class="col-2 text-center px-1">
-                        <a class="btn btn-link px-3" href="javascript:;">
-                            <i class="fa fa-github text-white text-lg"></i>
-                        </a>
-                        </div>
-                        <div class="col-2 text-center me-auto">
-                        <a class="btn btn-link px-3" href="javascript:;">
-                            <i class="fa fa-google text-white text-lg"></i>
-                        </a>
-                        </div>
-                    </div>
+
                     </div>
                 </div>
                 <div class="card-body">
@@ -77,10 +61,10 @@
                     <div class="text-center">
                         <button type="submit" class="btn bg-gradient-primary w-100 my-4 mb-2">Iniciar sesión</buttton>
                     </div>
-                    <p class="mt-4 text-sm text-center">
+                    {{-- <p class="mt-4 text-sm text-center">
                         ¿No recuerdas tu contraseña?
                         <a href="../../../pages/authentication/signup/illustration.html" class="text-primary text-gradient font-weight-bold">click aquí</a>
-                    </p>
+                    </p> --}}
                     </form>
                 </div>
                 </div>
@@ -96,20 +80,7 @@
                 </div>
                 </div>
                 <div class="col-12 col-md-6">
-                <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                    <li class="nav-item">
-                    <a href="https://www.facebook.com/FundacionJuanPabloIILaVidaPorTI/?locale=gl_ES" class="nav-link text-white" target="_blank">Facebook</a>
-                    </li>
-                    <li class="nav-item">
-                    <a href="https://www.creative-tim.com/presentation" class="nav-link text-white" target="_blank">Instagram</a>
-                    </li>
-                    <li class="nav-item">
-                    <a href="https://www.creative-tim.com/blog" class="nav-link text-white" target="_blank">x (twitter)</a>
-                    </li>
-                    <li class="nav-item">
-                    <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-white" target="_blank">Acerca de nosotros</a>
-                    </li>
-                </ul>
+
                 </div>
             </div>
             </div>

@@ -21,9 +21,7 @@
                         <div class = "mb-3 me-3">
                             <select name="usuario" id="ntpUsuario" class = "form-control" required>
                                 <option selected >Seleciones una opciones</option>
-                                <option value="1">prueba 1</option>
-                                <option value="2">prueba 2</option>
-                                <option value="3">prueba 3</option>
+
                             </select>
                         </div>
                     </div>
@@ -40,11 +38,8 @@
                     <div class = "row" >
                         <div class = "mb-2"><span>Prioridad:</span></div>
                         <div class = "mb-3 me-3">
-                            <select name="prioridad" id="ntpProioridad" class = "form-control" required>
-                                <option selected >Seleciones una opciones</option>
-                                <option value="1">prueba 1</option>
-                                <option value="2">prueba 2</option>
-                                <option value="3">prueba 3</option>
+                            <select name="prioridad" id="ntpPrioridad" class = "form-control" required>
+
                             </select>
                         </div>
                     </div>

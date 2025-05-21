@@ -33,8 +33,8 @@ class clientesController extends Controller
         $cliente->telefono = $request->telefono;
         $cliente->curp = $request->curp;
 
-        $cliente->save(); 
-        return $cliente;
+        $verificacion = $cliente->save(); 
+        return $verificacion;
     }
 
     public function update(Request $request){
@@ -45,15 +45,15 @@ class clientesController extends Controller
         $cliente-> telefono = $request -> telefono;
         $cliente-> curp = $request -> curp;
 
-        $cliente->save();
-        return $cliente;
+        $verificacion = $cliente->save();
+        return $verificacion;
     }
 
     public function delete(Request $request){
         $cliente = Cliente::find($request->id);
 
-        $cliente->delete();
-        return;
+        $verificacion = $cliente->delete();
+        return $verificacion;
     }
 
     public function info_clientes(){

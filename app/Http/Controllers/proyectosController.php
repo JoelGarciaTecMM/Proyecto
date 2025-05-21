@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\cliente;
+use App\Models\estadoProyecto;
 use App\Models\proyecto;
 use Illuminate\Http\Request;
 
@@ -18,9 +20,17 @@ class proyectosController extends Controller
 
     public function show()
     {
-        $proyectos = proyecto::all();
+        $proyectos = proyecto::get();
 
-        //return $proyectos;
+
+        for ($i=0; $i < $proyectos->count(); $i++ ){
+
+            $estado = estadoProyecto::where('id', '=', $proyectos[$i]->estado)->get();
+            $cliente = cliente::where ('id','=',$proyectos[$i]->idCliente)->get();
+            $proyectos[$i]->nombreEstado = $estado[0]->nombre;
+            $proyectos[$i]->nombreCliente = $cliente[0]->nombre;
+        }
+
         return $proyectos;
     }
 
@@ -35,8 +45,8 @@ class proyectosController extends Controller
         $proyectos->fechaFin = $request->fechaFin;
         $proyectos->descripcion = $request->descripcion;
 
-        $proyectos->save(); 
-        return ;
+        $verificacion = $proyectos->save(); 
+        return $verificacion;
     }
 
     public function update(Request $request){
@@ -46,15 +56,17 @@ class proyectosController extends Controller
         $proyecto-> fechaInicio = $request -> fechaInicio;
         $proyecto-> fechaFin = $request -> fechaFin;
         $proyecto-> descripcion = $request -> descripcion;
+        $proyecto-> estado = $request ->estado;
 
-        $proyecto->save();
-        return;
+        $verificacion = $proyecto->save();
+
+        return $verificacion;
     }
 
     public function delete(Request $request){
         $proyecto = proyecto::find($request->id);
 
-        $proyecto->delete();
-        return;
+        $verificacion = $proyecto->delete();
+        return $verificacion;
     }
 }

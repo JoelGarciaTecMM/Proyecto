@@ -15,11 +15,8 @@
                     <div class = "row" >
                         <div class = "mb-2"><span>Cliente:</span></div>
                         <div class = "mb-3 me-3">
-                            <select name="cliente" id="npUsuario" class = "form-control" required>
+                            <select name="cliente" id="npCliente" class = "form-control" required>
                                 <option selected >Seleciones una opciones</option>
-                                <option value="1">prueba 1</option>
-                                <option value="2">prueba 2</option>
-                                <option value="3">prueba 3</option>
                             </select>
                         </div>
                     </div>

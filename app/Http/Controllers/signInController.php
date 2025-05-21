@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Usuario;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\hash;
@@ -20,7 +21,20 @@ class signInController extends Controller
 
     public function login(Request $request){
 
-        
+        $credentials = $request->only('correo', 'contraseña');
+
+        $user = Usuario::where ('correo', $credentials['correo'])->first();
+
+        if ($user and hash::check($credentials['contraseña'],$user->contraseña)){
+            Auth::guard('usuarios')->login($user);
+            $users = Auth::user();
+            $request->session()->put('id', $user->id);
+            $request->session()->put('tipo', $user->tipoUsuario);
+            return redirect()->intended(route('dashboard')); 
+        }
+        else return redirect(route('signIn')); 
+
+        /*
         $usuario = new usuario;
 
         $credentials = [
@@ -36,6 +50,8 @@ class signInController extends Controller
             return redirect()->intended(route('dashboard')); 
         }
         else return redirect(route('signIn')); 
+
+        */
 
         // if (Auth::attempt($credentials,false)){
         //     $request -> session()->regenerate();

@@ -6,9 +6,18 @@
     <div class="container-fluid py-3">
         <div class="row me-1">
             <div class = "card">
-                <div class="me-5 ms-5">
+                <div class="card-header p-3">
+                    <div class="icon icon-lg icon-shape bg-gradient-primary shadow text-center border-radius-lg float-start">
+                        <i class="material-icons opacity-10">group</i>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <h4 class="">Clientes</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body me-5 ms-5">
                     <div class="row">
-                        <span class = "mb-3 fs-4">Clientes</span>
                         <div class="container text-center mb-4">
                             <div class="row">
                                 <div class="col">
@@ -26,7 +35,7 @@
                             </div>
                         </div>
                         <div class="table-responsive">
-                            <table class = "table table-flush dataTable-table">
+                            <table class = "table table-flush dataTable-table" id = "dataTable-clientes">
                                 <thead>
                                     <td>Id</td>
                                     <td>Nombre</td>

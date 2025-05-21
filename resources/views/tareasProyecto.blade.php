@@ -42,7 +42,9 @@
                                     <td>Nombre</td>
                                     <td>Descripcion</td>
                                     <td>Estado</td>
-                                    <th>Usuario asignado</th>
+                                    <td>Caducidad</td>
+                                    <th>Empleado</th>
+                                    <th>prioridad</th>
                                     <td>Acciones</td>
                                 </thead>
                                 <tbody id = "tbodyTareasProyecto">
@@ -60,6 +62,7 @@
 
 @include('modales.tareas_proyecto_agregar');
 @include('modales.tareas_proyecto_editar');
+@include('modales.tarea_documento');
 
 
 @section('js')
@@ -70,6 +73,13 @@
         const ruta_put_tareasProyecto = '{{route('api.tareasProyecto.update')}}';
         const ruta_delete_tareasProyecto = '{{route('api.tareasProyecto.delete')}}';
         const id_proyecto = '{{request()->id}}';
+        const prioridad_todos = '{{route('api.prioridad.todos')}}';
+        const estado_tarea_todos = '{{route('api.estadoTarea.todos')}}';
+        const usuarios_todos = '{{route('api.usuarios.show')}}';
+        const documentos_tarea = '{{route('api.documentoTarea')}}';
+        const documentos_tarea_create = '{{route('api.documentoTarea.create')}}';
+        const documentos_tarea_delete = '{{route('api.documentoTarea.delete')}}';
+
         console.log (id_proyecto);
     </script>
     <script src="../resources/js/apiFunctions/tareas_proyecto.js"></script>

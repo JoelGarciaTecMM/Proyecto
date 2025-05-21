@@ -42,10 +42,15 @@
                         <div class = "mb-2"><span>Prioridad:</span></div>
                         <div class = "mb-3 me-3">
                             <select name="prioridad" id="etpPrioridad" class = "form-control" required>
-                                <option selected >Seleciones una opciones</option>
-                                <option value="1">prueba 1</option>
-                                <option value="2">prueba 2</option>
-                                <option value="3">prueba 3</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class = "row" >
+                        <div class = "mb-2"><span>Estado:</span></div>
+                        <div class = "mb-3 me-3">
+                            <select name="estado" id="etpEstado" class = "form-control" required>
+
                             </select>
                         </div>
                     </div>

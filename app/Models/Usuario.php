@@ -14,39 +14,23 @@ class Usuario extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
     use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
-    /*
+    protected $table = 'usuarios';
+
     protected $fillable = [
+        'id',
         'nombre',
-        'correo',
+        'tipoUsuario',
         'contraseña',
     ];
-    */
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    /*
     protected $hidden = [
-        'contraseña',
-        'remember_token',
+        'contraseña'
     ];
-    */
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    /*
-    protected $casts = [
-        'contraseña' => 'hashed',
-    ];
-    */
+    public function getAuthPassword()
+    {
+        return $this->user_pass;
+    }
+
+    public $timestamps = false;
 }

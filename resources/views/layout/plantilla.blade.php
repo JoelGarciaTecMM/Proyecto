@@ -24,7 +24,6 @@
     </head>
     <body class = "g-sidenav-show bg-gray-200 g-sidenav-hidden">
         
-
         {{-- sidebar--}}
 
         <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 bg-gradient-dark" id="sidenav-main">
@@ -34,81 +33,64 @@
                     <span class="ms-1 font-weight-bold text-white">Fundacion Juan Pablo II</span>
                     <br>
                     <span class="ms-1 font-weight-bold text-white ms-5">la vida por ti</span>
-                </div>            </div>
-            <hr class="horizontal light mt-0 mb-2">
+                </div>            
+            </div>
+            <hr class="horizontal light">
             <div class="collapse navbar-collapse w-auto h-auto" id="sidenav-collapse-main">
                 <ul class="navbar-nav">
-                    <!--
-                <li class="nav-item mb-2 mt-0">
-                    <a data-bs-toggle="collapse" href="#ProfileNav" class="nav-link text-white" aria-controls="ProfileNav" role="button" aria-expanded="false">
-                    <img src="../../../assets/img/team-3.jpg" class="avatar">
-                    <span class="nav-link-text ms-2 ps-1">Brooklyn Alice</span>
-                    </a>
-                    <div class="collapse" id="ProfileNav" style="">
-                    <ul class="nav ">
-                        <li class="nav-item">
-                        <a class="nav-link text-white" href="../../../pages/pages/profile/overview.html">
-                            <span class="sidenav-mini-icon"> MP </span>
-                            <span class="sidenav-normal  ms-3  ps-1"> My Profile </span>
-                        </a>
+
+                    <li class="nav-item">
+                        <li class="nav-item ">
+                            <a class="nav-link text-white " href="{{route('ajustes')}}">
+                                <span class="sidenav-mini-icon"> <i class="material-icons opacity-10">settings</i> </span>
+                                <span class="sidenav-normal  ms-2  ps-1"> Ajustes </span>
+                            </a>
                         </li>
-                        <li class="nav-item">
-                        <a class="nav-link text-white " href="../../../pages/pages/account/settings.html">
-                            <span class="sidenav-mini-icon"> S </span>
-                            <span class="sidenav-normal  ms-3  ps-1"> Settings </span>
-                        </a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link text-white " href="../../../pages/authentication/signin/basic.html">
-                            <span class="sidenav-mini-icon"> L </span>
-                            <span class="sidenav-normal  ms-3  ps-1"> Logout </span>
-                        </a>
-                        </li>
-                    </ul>
-                    </div>
-                </li>-->
+                    </li>
 
-                <li class="nav-item">
-                    <div class="collapse show" id="pagesExamples">
-                        <ul class="nav">
+                    <hr class="horizontal light mt-0 mb-2">
 
-                            
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " href="{{route('logout')}}">
-                                    <i class="material-icons opacity-10">logout</i>
-                                </a>
-                            </li>
+                    <li class="nav-item">
+                        <div class="collapse show" id="pagesExamples">
+                            <ul class="nav">
+                            @if (Session::get('tipo') == 1)
+                                <li class="nav-item ">
+                                    <a class="nav-link text-white " href="{{route('dashboard')}}">
+                                        <span class="sidenav-mini-icon"> D </span>
+                                        <span class="sidenav-normal  ms-2  ps-1"> Dashboard </span>
+                                    </a>
+                                </li>
 
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " href="{{route('dashboard')}}">
-                                    <span class="sidenav-mini-icon"> D </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Dashboard </span>
-                                </a>
-                            </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link text-white " href="{{route('proyectos')}}">
+                                        <span class="sidenav-mini-icon"> P </span>
+                                        <span class="sidenav-normal  ms-2  ps-1"> Proyectos </span>
+                                    </a>
+                                </li>
 
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " href="{{route('proyectos')}}">
-                                    <span class="sidenav-mini-icon"> P </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Proyectos </span>
-                                </a>
-                            </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link text-white " href="{{route('usuarios')}}">
+                                        <span class="sidenav-mini-icon"> U </span>
+                                        <span class="sidenav-normal  ms-2  ps-1"> Usuarios </span>
+                                    </a>
+                                </li>
 
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " href="{{route('usuarios')}}">
-                                    <span class="sidenav-mini-icon"> U </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Usuarios </span>
-                                </a>
-                            </li>
-
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " href="{{route('clientes')}}">
-                                    <span class="sidenav-mini-icon"> C </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Clientes </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link text-white " href="{{route('clientes')}}">
+                                        <span class="sidenav-mini-icon"> C </span>
+                                        <span class="sidenav-normal  ms-2  ps-1"> Clientes </span>
+                                    </a>
+                                </li>
+                            @endif
+                                <li class="nav-item ">
+                                    <a class="nav-link text-white " href="{{route('tareasUsuario')}}">
+                                        <span class="sidenav-mini-icon"> T </span>
+                                        <span class="sidenav-normal  ms-2  ps-1"> Tareas </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
 
                 </ul>
             </div>
@@ -116,7 +98,50 @@
         {{-- end of sidebarr --}}
 
         <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-            <div class = "mt-4">
+
+        {{--navBar--}}
+
+        <nav class="navbar navbar-main navbar-expand-lg position-sticky mt-2 top-1 px-0 py-1 mx-3 shadow-none border-radius-lg z-index-sticky" id="navbarBlur" data-scroll="true">
+            <div class="container-fluid py-1 px-2">
+
+                <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+                    <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+
+                    </div>
+                    <ul class="navbar-nav  justify-content-end">
+                        <li class="nav-item">
+                        </li>
+                        {{--
+                        <li class="nav-item">
+                            <a href="{{route('logout')}}"  class="nav-link py-0 px-1 line-height-0">
+                                <i class="material-icons opacity-10">settings</i>
+                            </a>
+                        </li>
+                        --}}
+                        <li class="nav-item">
+                            <a href="{{route('logout')}}" class="nav-link py-0 px-1 line-height-0">
+                                <i class="material-icons opacity-10">logout</i>
+                            </a>
+                        </li>
+                        {{--
+                        <li class="nav-item dropdown py-0 pe-3">
+                            <a href="javascript:;" class="nav-link py-0 px-1 position-relative line-height-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="material-icons opacity-10">notifications</i>
+                                <span class="position-absolute top-5 start-100 translate-middle badge rounded-pill bg-danger border border-white small py-1 px-2">
+                                <span class="small">11</span>
+                                <span class="visually-hidden">unread notifications</span>
+                                </span>
+                            </a>
+                        </li>
+                        --}}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        {{--end sidebar--}}
+
+            <div class = "mt-2">
             {{-- content --}}
                 <div>
                     @yield('content')
@@ -155,7 +180,7 @@
         </footer> --}}
         {{-- end of footer --}}
         
-
+        @include('layout/alertas');
         <script src="../resources/js/plugins/fullcalendar.min.js"></script>
         <script src="../resources/js/plugins/chartjs.min.js"></script>
         <script src="../resources/js/core/bootstrap.min.js"></script>
