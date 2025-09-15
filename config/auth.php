@@ -36,10 +36,16 @@ return [
     */
 
     'guards' => [
+        // 'web' => [
+        //     'driver' => 'session',
+        //     'provider' => 'users',
+        // ],
+        
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'usuarios',
         ],
+        
         'usuarios' => [
             'driver' => 'session',
             'provider' => 'usuarios',
@@ -65,10 +71,10 @@ return [
 
     'providers' => [
 
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\User::class,
-        ],
+        // 'users' => [
+        //     'driver' => 'eloquent',
+        //     'model' => App\Models\User::class,
+        // ],
 
         'usuarios' => [
             'driver' => 'eloquent',

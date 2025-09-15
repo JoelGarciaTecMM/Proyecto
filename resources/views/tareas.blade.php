@@ -36,7 +36,7 @@
                                     <td>Estado</td>
                                     <td>Caducidad</td>
                                     <td>Prioridad</td>
-                                    <td>Cliente</td>
+                                    <td>Beneficiario</td>
                                     <td>Acciones</td>
                                 </thead>
                                 <tbody id = "tbodyTableTareasUsuario">

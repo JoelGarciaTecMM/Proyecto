@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\cliente;
+use App\Models\beneficiario;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 
-class clientesController extends Controller
+class beneficiarioController extends Controller
 {
     public function index()
     {
-        $clientes = cliente::all();
+        $clientes = beneficiario::all();
 
         return view("clientes",compact('clientes'));
     }
 
     public function show()
     {
-        $cliente = Cliente::all();
+        $cliente = beneficiario::all();
 
         //return $proyectos;
         return $cliente;
@@ -25,7 +25,7 @@ class clientesController extends Controller
 
 
     public function create(Request $request){
-        $cliente = new Cliente();
+        $cliente = new Beneficiario();
 
         $cliente->nombre = $request->nombre;
         $cliente->apellido = $request->apellido;
@@ -38,7 +38,7 @@ class clientesController extends Controller
     }
 
     public function update(Request $request){
-        $cliente = Cliente::find($request->id);
+        $cliente = beneficiario::find($request->id);
         $cliente-> nombre = $request -> nombre;
         $cliente-> apellido = $request -> apellido;
         $cliente-> correo = $request -> correo;
@@ -50,7 +50,7 @@ class clientesController extends Controller
     }
 
     public function delete(Request $request){
-        $cliente = Cliente::find($request->id);
+        $cliente = beneficiario::find($request->id);
 
         $verificacion = $cliente->delete();
         return $verificacion;

@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\cliente;
+use App\Models\beneficiario;
+
 use App\Models\estadoTarea;
 use App\Models\prioridad;
 use App\Models\proyecto;
@@ -24,7 +25,7 @@ class tareasController extends Controller
         if ($tareas->count() > 0){
             for ($i= 0; $i< $tareas->count(); $i++){
                 $proyecto = proyecto::where ('id','=',$tareas[$i]->idProyecto)->get();
-                $cliente = cliente::where ('id','=',$proyecto[0]->idCliente)->get();
+                $cliente = beneficiario::where ('id','=',$proyecto[0]->idCliente)->get();
                 $tareas[$i]->nombreCliente = $cliente[0]->nombre;
                 $tareas[$i]->idCliente = $cliente[0]->id;
 

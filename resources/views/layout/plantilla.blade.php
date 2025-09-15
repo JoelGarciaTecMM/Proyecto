@@ -77,8 +77,8 @@
 
                                 <li class="nav-item ">
                                     <a class="nav-link text-white " href="{{route('clientes')}}">
-                                        <span class="sidenav-mini-icon"> C </span>
-                                        <span class="sidenav-normal  ms-2  ps-1"> Clientes </span>
+                                        <span class="sidenav-mini-icon"> B </span>
+                                        <span class="sidenav-normal  ms-2  ps-1"> Beneficiarios </span>
                                     </a>
                                 </li>
                             @endif

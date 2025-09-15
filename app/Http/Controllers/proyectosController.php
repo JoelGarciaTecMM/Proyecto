@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\cliente;
+use App\Models\beneficiario;
+
 use App\Models\estadoProyecto;
 use App\Models\proyecto;
 use Illuminate\Http\Request;
@@ -26,7 +27,7 @@ class proyectosController extends Controller
         for ($i=0; $i < $proyectos->count(); $i++ ){
 
             $estado = estadoProyecto::where('id', '=', $proyectos[$i]->estado)->get();
-            $cliente = cliente::where ('id','=',$proyectos[$i]->idCliente)->get();
+            $cliente = beneficiario::where ('id','=',$proyectos[$i]->idCliente)->get();
             $proyectos[$i]->nombreEstado = $estado[0]->nombre;
             $proyectos[$i]->nombreCliente = $cliente[0]->nombre;
         }

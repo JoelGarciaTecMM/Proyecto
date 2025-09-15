@@ -39,7 +39,7 @@
                                 <thead>
                                     <td>Id</td>
                                     <td>Nombre</td>
-                                    <td>Cliente</td>
+                                    <td>Beneficiario</td>
                                     <td>Estado</td>
                                     <td>Fecha inicio</td>
                                     <td>Fecha fin</td>

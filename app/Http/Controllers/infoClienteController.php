@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\cliente;
+use App\Models\beneficiario;
 use App\Models\documentoCliente;
 use App\Models\documentoTarea;
 use App\Models\proyecto;
@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 class infoClienteController extends Controller
 {
     public function infoGeneral(Request $request){
-        $info = cliente::where ('id', '=', $request->id)->get();
+        $info = beneficiario::where ('id', '=', $request->id)->get();
         return $info;
     }
 

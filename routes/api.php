@@ -11,9 +11,11 @@ use App\Http\Controllers\proyectosController;
 use App\Http\Controllers\rolUsuarioController;
 use App\Http\Controllers\tareasController;
 use App\Http\Controllers\usuariosController;
+use App\Http\Controllers\beneficiarioController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\tareasProyectoController;
+use App\Models\beneficiario;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,10 +52,10 @@ Route::post('/usuarios_delete', [usuariosController::class,'delete'])-> name('ap
 
 
 //clientes
-Route::get('/cliente', [clientesController::class,'show'])-> name('api.clientes.show');
-Route::post('/cliente', [clientesController::class,'create'])-> name('api.clientes.create');
-Route::post('/cliente_update', [clientesController::class,'update'])-> name('api.clientes.update');
-Route::post('/cliente_delete', [clientesController::class,'delete'])-> name('api.clientes.delete');
+Route::get('/beneficiario', [beneficiarioController::class,'show'])-> name('api.clientes.show');
+Route::post('/beneficiario', [beneficiarioController::class,'create'])-> name('api.clientes.create');
+Route::post('/beneficiario_update', [beneficiarioController::class,'update'])-> name('api.clientes.update');
+Route::post('/beneficiario_delete', [beneficiarioController::class,'delete'])-> name('api.clientes.delete');
 
 //info Cliente
 

@@ -47,7 +47,7 @@ function showClientes(){
                 "<td>"+arrDatos[i].curp+"</td>"+
                 '<td class = "text-sm">'+
                     '<a type = "button" name = "'+i+'" onclick = "showEditarCliente(this)" ><i class="material-icons text-secondary opacity-10">edit</i></a>'+
-                    '<a type = "button" href = "./info_cliente?id='+arrDatos[i].id+'"><i class="material-icons text-secondary opacity-10">person</i></a>'+
+                    '<a type = "button" href = "./info_beneficiario?id='+arrDatos[i].id+'"><i class="material-icons text-secondary opacity-10">person</i></a>'+
                     '<a type = "button" name = "'+i+'" onclick = "eliminarCliente(this)" ><i class="material-icons text-secondary opacity-10">delete</i></a>'+
                 '</td>'+
                 "</tr>"

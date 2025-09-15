@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ajustesController;
+use App\Http\Controllers\beneficiarioController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\signInController;
 use App\Http\Controllers\dashboardController;
@@ -34,30 +35,30 @@ Route::get('/',[signInController::class,'loginView']) -> name ("signIn");
 
 //Route::middleware('auth')->group(function () {
         //ajustes
-        Route::get('/ajustes',[ajustesController::class,'index'])->name('ajustes');
+        Route::get('/ajustes',[ajustesController::class,'index'])-> middleware('auth')->name('ajustes');
 
         //dashboard
-        Route::get('/dashboard', [dashboardController::class,'index'])-> name('dashboard');
+        Route::get('/dashboard', [dashboardController::class,'index'])->middleware('auth')-> name('dashboard');
 
         //proyectos
-        Route::get('/proyectos', [proyectosController::class,'index'])-> name('proyectos');
+        Route::get('/proyectos', [proyectosController::class,'index'])-> middleware('auth')-> name('proyectos');
         // Route::post('/proyectos', [proyectosController::class,'create'])-> name('proyectos.create');
         // Route::put('/proyectos', [proyectosController::class,'update'])-> name('proyectos.update');
         // Route::delete('/proyectos', [proyectosController::class,'delete'])-> name('proyectos.delete');
 
         //clientes
-        Route::get('/clientes', [clientesController::class,'index'])-> name('clientes');
-        Route::get('/info_cliente',[clientesController::class,'info_clientes']) -> name ("clientes_info");
+        Route::get('/beneficiario', [beneficiarioController::class,'index'])-> middleware('auth')-> name('clientes');
+        Route::get('/info_beneficiario',[beneficiarioController::class,'info_clientes']) -> middleware('auth')-> name ("clientes_info");
         // Route::post('/clientes', [clientesController::class,'create'])-> name('clientes.create');
         // Route::put('/clientes', [clientesController::class,'update'])-> name('clientes.update');
         // Route::delete('/clientes', [clientesController::class,'delete'])-> name('clientes.delete');
 
         //usuarios
-        Route::get('/usuarios', [usuariosController::class,'index'])-> name('usuarios');
+        Route::get('/usuarios', [usuariosController::class,'index'])-> middleware('auth')-> name('usuarios');
         // Route::post('/usuarios', [usuariosController::class,'create'])-> name('usuario.create');
         // Route::put('/usuarios', [usuariosController::class,'update'])-> name('usuario.update');
         // Route::delete('/usuarios', [usuariosController::class,'delete'])-> name('usuario.delete');
 
-        Route::get('/tareas_proyecto', [tareasProyectoController::class,'index'])-> name ('tareasProyecto');
+        Route::get('/tareas_proyecto', [tareasProyectoController::class,'index'])-> middleware('auth')-> name ('tareasProyecto');
 
-        Route::get('/tareas_usuario', [tareasController::class,'index'])->name('tareasUsuario');
+        Route::get('/tareas_usuario', [tareasController::class,'index'])-> middleware('auth')->name('tareasUsuario');

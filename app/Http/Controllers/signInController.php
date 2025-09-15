@@ -26,11 +26,14 @@ class signInController extends Controller
         $user = Usuario::where ('correo', $credentials['correo'])->first();
 
         if ($user and hash::check($credentials['contraseña'],$user->contraseña)){
-            Auth::guard('usuarios')->login($user);
-            $users = Auth::user();
+            // Auth::guard('usuarios')->login($user);
+            // $users = Auth::user();
+            Auth::login($user);
             $request->session()->put('id', $user->id);
             $request->session()->put('tipo', $user->tipoUsuario);
-            return redirect()->intended(route('dashboard')); 
+            if ($user->tipoUsuario == 1)return redirect()->intended(route('dashboard'));
+            else return redirect()->intended(route('tareasUsuario'));
+
         }
         else return redirect(route('signIn')); 
 

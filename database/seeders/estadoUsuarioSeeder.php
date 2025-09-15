@@ -30,10 +30,10 @@ class estadoUsuarioSeeder extends Seeder
 
         $usuarioAdmin2 = new Usuario();
 
-        $usuarioAdmin2->nombre = 'Valeria';
-        $usuarioAdmin2->apellido = 'Razo Roldan';
-        $usuarioAdmin2->correo = 'zap01204@zapopan.tecmm.edu.mx';
-        $usuarioAdmin2->contraseña = Hash::make("admin1");
+        $usuarioAdmin2->nombre = 'Admin';
+        $usuarioAdmin2->apellido = 'admin';
+        $usuarioAdmin2->correo = 'luis.gaytan@fundacionjuanpablo.org';
+        $usuarioAdmin2->contraseña = Hash::make("gagl980219");
         $usuarioAdmin2->tipoUsuario = '1';
 
         $usuarioAdmin2->save();

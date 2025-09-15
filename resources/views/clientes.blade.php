@@ -1,6 +1,6 @@
 @extends('layout.plantilla')
 
-@section('titulo', 'Clientes')
+@section('titulo', 'Beneficiarios')
 
 @section('content')
     <div class="container-fluid py-3">
@@ -12,7 +12,7 @@
                     </div>
                     <div class="row mt-3">
                         <div class="col-md-6">
-                            <h4 class="">Clientes</h4>
+                            <h4 class="">Beneficiarios</h4>
                         </div>
                     </div>
                 </div>
